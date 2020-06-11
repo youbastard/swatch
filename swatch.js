@@ -6,16 +6,14 @@
 // TODO - add win state (in title bar?)
 // TODO - add selected state for rectangle
 // TODO - add fixed state for rectangle
-// TODO - use 3 color hex values for levels
 // DOM ELEMENTS 
 // y=svg
 // z=status
 // map function
 A='map';
 // hex to dec conversion
-// (/\w{2}/g will split a 6char hex color into 3colors
 // +(0x+b) will cast a hex value b to a decimal
-B=a=>a.match(/\w{2}/g)[A](b=>+('0x'+b));
+B=a=>[...a][A](b=>+('0x'+b+b));
 // fill cells array with 36 objects
 C=[];while(C.push({})<36);
 // inner html
@@ -34,10 +32,9 @@ I=J=K=0;
 // TODO - i can improve this somehow
 L=a=>(b=C.filter(c=>!c.f)[A](c=>c.i).sort(_=>Math.random()-.5),C[A](c=>c.f||(c.i=b.pop())));
 // get level rgb data
-// TODO - this can be combined into the init function
-M=a=>Z[A](b=>B(b.slice(a*=2,a+8)));
+M=a=>Z[A](b=>B(b.substr(K,4)));
 // set status
-N=_=>z[D]=`Lvl:${K+1} Moves:${J++}`;
+N=_=>z[D]=`Level:${K+1} Moves:${J++}`;
 // redraw board - update status then update all rectangles then update x & y
 O=_=>(N(),C[A](({i},b)=>E(y.childNodes[b],{i,x:X(i),y:Y(i)})));
 // initialize level data
@@ -58,7 +55,7 @@ Q=z=>{
     // im proud of myself for that
     a.f=/^[3]*[50]/.test(b);
     // set the color
-    a.fill=`rgb(${M(K)[A](c=>G(X(b)/5,Y(b)/5,...c))})`;
+    a.fill=`rgb(${M()[A](c=>G(X(b)/5,Y(b)/5,...c))})`;
     // create a svg rect 
     let r=document.createElementNS('http://www.w3.org/2000/svg','rect');
     // set the attributes
@@ -85,7 +82,6 @@ X=i=>i%6;
 // index to y location
 Y=i=>i/6|0;
 // 10 levels of data
-// TODO: replace this with random seeded data from OS13k
-Z=['e81cf2013d24e98a6c4fe0613ace','512fffcaff227728e908ea975ee3','40337fe5b7a00c583f68809e0dd3'];
+Z=['F1F032E875E64D','53FDF273F1FA6E','438ECA16368A1D'];
 // start game
 Q()
