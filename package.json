@@ -1,0 +1,16 @@
+{
+  "name": "swatch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "swatch.js",
+  "scripts": {
+    "dev": "browser-sync",
+    "build": "terser --compress --mangle -o swatch.min.js -- swatch.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "terser": "^4.7.0"
+  }
+}
