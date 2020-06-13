@@ -55,7 +55,7 @@ Q=z=>{
     // set the color
     a.fill=`rgb(${M()[A](c=>G(X(b)/5,Y(b)/5,...c))})`;
     // create a rect element and append it to svg
-    r=y.appendChild(document.createElementNS('http://www.w3.org/2000/svg','rect'));
+    y.append(r=document.createElementNS('http://www.w3.org/2000/svg','rect'));
     // set the attributes
     E(r,{height:1,width:1,x:X(b),y:Y(b),...a});
     // add onclick handler
@@ -71,7 +71,7 @@ Q=z=>{
     };
   });
   // wait 1 seconds, shuffle array elements, call draw function  set is init
-  setTimeout(_=>{O(L());I=1},1e3);
+  setTimeout("O(L());I=1",1e3);
 }
 // ZZFX
 R=a=>zzfx(a);
