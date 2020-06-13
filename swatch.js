@@ -32,7 +32,7 @@ L=a=>(b=C.filter(c=>!c.f)[A](c=>c.i).sort(_=>Math.random()-.5),C[A](c=>c.f||(c.i
 // get level rgb data
 M=a=>Z[A](b=>B(b.substr(K,4)));
 // set status
-N=_=>z[D]=`Level:${++K} Moves:${J++}`;
+N=_=>z[D]=`Level:${K} Moves:${J++}`;
 // redraw board - update status then update all rectangles then update x & y
 O=_=>(N(),C[A](({i},b)=>E(y.childNodes[b],{i,x:X(i),y:Y(i)})));
 // initialize level data
