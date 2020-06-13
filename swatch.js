@@ -23,7 +23,7 @@ E=(a,b)=>{for(c in b)a.setAttribute(c,b[c])};
 // is sorted test
 F=a=>a.every((b,c)=>b.i==c);
 // bilinear interpolation
-G=(x,y,q,r,s,t)=>(1-y)*((1-x)*q+x*r)+y*((1-x)*s+x*t);
+G=(x,y,q,r,s,t)=>(1-y)*((z=1-x)*q+x*r)+y*(z*s+x*t);
 // swap indexs
 H=(a,b)=>[a.i,b.i]=[b.i,a.i];
 // I=has init flag, J=moves made, K=current level
