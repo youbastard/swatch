@@ -51,7 +51,8 @@ Q=z=>{
     a.i=b;
     // the regex /^[3]*[50]/ will only match the corners of the board [1,5,30,35]
     // im proud of myself for that
-    a.f=/^[3]*[50]/.test(b);
+    // the plus will cast it to 1|0 (for smaller css selector)
+    a.f=+/^[3]*[50]/.test(b);
     // set the color
     a.fill=`rgb(${M()[A](c=>G(X(b)/5,Y(b)/5,...c))})`;
     // create a rect element and append it to svg
