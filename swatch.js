@@ -3,6 +3,8 @@
  * author: nicholas ortenzio
  * inspired by the game "i love hue"
  **/
+// TODO - can X/Y calls be combined into 1 function and destructured?
+// TODO - find some way to improve the shuffle function
 /**
  * DOM ELEMENTS 
  * y=svg
@@ -27,7 +29,6 @@ H=(a,b)=>[a.i,b.i]=[b.i,a.i];
 // I=has init flag, J=moves made, K=current level
 I=J=K=0;
 // shuffle with fixed positions
-// TODO - i can improve this somehow
 L=a=>(b=C.filter(c=>!c.f)[A](c=>c.i).sort(_=>Math.random()-.5),C[A](c=>c.f||(c.i=b.pop())));
 // get level rgb data
 M=a=>Z[A](b=>B(b.substr(K,4)));
@@ -40,9 +41,8 @@ Q=z=>{
   // reset array used for holding cells to be swapped
   P=[];
   // clear existing elements
-  y[D]='';
-  // reset moves counter
-  J=0;
+  // and reset moves counter - it will be cast to 0 later
+  y[D]=J='';
   // for every cell
   C[A]((a,b)=>{
     a.i=b;
